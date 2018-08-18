@@ -13,11 +13,15 @@ import CoreData
 import CoreLocation
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+    
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
+   
 
     @IBOutlet weak var myMapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         getData()
         
     }
@@ -28,9 +32,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
 
 
-}
 
-func getData(){
+    func getData(){
     
     let url = URL(string: "https://api.jcdecaux.com/vls/v1/stations?apiKey=6d5071ed0d0b3b68462ad73df43fd9e5479b03d6&contract=Bruxelles-Capitale")
     let urlRequest = URLRequest(url: url!)
@@ -54,6 +57,7 @@ func getData(){
                 print("failed serializaton")
                 return
             }
+            
             for station in dataStation!{
                 let number = station["number"] as! Int
                 let name = station["name"] as! String
@@ -64,16 +68,17 @@ func getData(){
                 let position = station["position"] as? [String: Double]
                 let lat = position!["lat"]
                 let lng = position!["lng"]
-                let last_update = station["last_update"]
+                let last_update = station["last_update"] as! Int
+                let contract_name = station["contract_name"] as! String
+                let banking = station["banking"] as! Bool
+                let bonus = station["bonus"] as! Bool
                 
-                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate
-                    else{
-                        return
-                }
                 
-                let mangedContext = appDelegate.persistentContainer.viewContext
+            
                 
-                let dataStation = NSEntityDescription.insertNewObject(forEntityName: "VilloStation", into: mangedContext) as! VilloStation
+                let mangedContext = self.appDelegate?.persistentContainer.viewContext
+                
+                let dataStation = NSEntityDescription.insertNewObject(forEntityName: "VilloStation", into: mangedContext!) as! VilloStation
                 
                 dataStation.number = Int16(number)
                 dataStation.address = address
@@ -83,10 +88,13 @@ func getData(){
                 dataStation.available_bike_stands = Int16(available_bike_stands)
                 dataStation.lat = lat!
                 dataStation.lng = lng!
-                dataStation.last_update = last_update as! Int32
+                dataStation.last_update = Int64(last_update)
+                dataStation.contract_name = contract_name
+                dataStation.banking = banking
+                dataStation.bonus = bonus
                 
                 do {
-                    try mangedContext.save()
+                    try mangedContext?.save()
                 }catch{
                     fatalError("fail")
                 }
@@ -94,13 +102,13 @@ func getData(){
             }
         }
     }
-    
-    
     task.resume()
     
-    DispatchQueue.main.async {
+    /*DispatchQueue.main.async {
         
-    }
+    }*/
     
+}
+
 }
 
