@@ -31,6 +31,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 }
 
 func getData(){
+    
     let url = URL(string: "https://api.jcdecaux.com/vls/v1/stations?apiKey=6d5071ed0d0b3b68462ad73df43fd9e5479b03d6&contract=Bruxelles-Capitale")
     let urlRequest = URLRequest(url: url!)
     
@@ -48,10 +49,53 @@ func getData(){
             print("Error: did not receive data")
             return
         }
-       /* let json = JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject]
-        
-        let title = json!["title"] as? String*/
+        do{
+            guard let dataStation = try? JSONSerialization.jsonObject(with: responseData, options: []) as? [AnyObject] else {
+                print("failed serializaton")
+                return
+            }
+            for station in dataStation!{
+                let number = station["number"] as! Int
+                let name = station["name"] as! String
+                let address = station["address"] as! String
+                let bike_stands = station["bike_stands"] as! Int
+                let available_bike_stands = station["available_bike_stands"] as! Int
+                let available_bikes = station["available_bikes"] as! Int
+                let position = station["position"] as? [String: Double]
+                let lat = position!["lat"]
+                let lng = position!["lng"]
+                let last_update = station["last_update"]
+                
+                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate
+                    else{
+                        return
+                }
+                
+                let mangedContext = appDelegate.persistentContainer.viewContext
+                
+                let dataStation = NSEntityDescription.insertNewObject(forEntityName: "VilloStation", into: mangedContext) as! VilloStation
+                
+                dataStation.number = Int16(number)
+                dataStation.address = address
+                dataStation.name = name
+                dataStation.bike_stands = Int16(bike_stands)
+                dataStation.available_bikes = Int16(available_bikes)
+                dataStation.available_bike_stands = Int16(available_bike_stands)
+                dataStation.lat = lat!
+                dataStation.lng = lng!
+                dataStation.last_update = last_update as! Int32
+                
+                do {
+                    try mangedContext.save()
+                }catch{
+                    fatalError("fail")
+                }
+                
+            }
+        }
     }
+    
+    
     task.resume()
     
     DispatchQueue.main.async {
