@@ -17,27 +17,51 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     let appDelegate = UIApplication.shared.delegate as? AppDelegate
     
 
-   
-
     @IBOutlet weak var myMapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getData()
+        //refreshData()
         laatZienOpKaart()
-        
+        getData()
     }
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+   /* func refreshData(){
+        let mangedContext = self.appDelegate?.persistentContainer.viewContext
 
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "VilloStation")
+        fetchRequest.includesPropertyValues = false
+        
+        do{
+            let items = try mangedContext?.fetch(fetchRequest) as! [NSManagedObject]
+            
+            for item in items {
+                mangedContext?.delete(item)
+            }
+           let allAnnotations = myMapView.annotations
+            myMapView.removeAnnotation(allAnnotations)
+            
+            try mangedContext?.save()
+                
+            
+        } catch{
+            
+        }
+        getData()
 
+    }*/
 
     func getData(){
-        let mangedContext = self.appDelegate?.persistentContainer.viewContext
+    let mangedContext = self.appDelegate?.persistentContainer.viewContext
 
     
     let url = URL(string: "https://api.jcdecaux.com/vls/v1/stations?apiKey=6d5071ed0d0b3b68462ad73df43fd9e5479b03d6&contract=Bruxelles-Capitale")
@@ -46,22 +70,22 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     let session = URLSession(configuration: URLSessionConfiguration.default)
     
-    let task = session.dataTask(with: urlRequest){
+        let task = session.dataTask(with: urlRequest){
         (data, response, error) in
-        guard error == nil else {
+            guard error == nil else {
             print("error calling GET")
             print(error!)
             return
-        }
-        guard let responseData = data else {
+            }
+            guard let responseData = data else {
             print("Error: did not receive data")
             return
-        }
-        do{
-            guard let dataStation = try? JSONSerialization.jsonObject(with: responseData, options: []) as? [AnyObject] else {
+            }
+            do{
+                guard let dataStation = try? JSONSerialization.jsonObject(with: responseData, options: []) as? [AnyObject] else {
                 print("failed serializaton")
                 return
-            }
+                }
 
             
             for station in dataStation!{
@@ -104,7 +128,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }
         task.resume()
     }
-        func laatZienOpKaart()  {
+    
+    func laatZienOpKaart()  {
             
             let mangedContext = self.appDelegate?.persistentContainer.viewContext
 
@@ -137,6 +162,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         self.myMapView.setRegion(region, animated: true)
     }
+            
+    }
     /*Eigen locatie, afkomstig van https://stackoverflow.com/questions/25449469/show-current-location-and-update-location-in-mkmapview-in-swift */
             
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -147,7 +174,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
              }
              
             }
-        }
+        
     
     }
     

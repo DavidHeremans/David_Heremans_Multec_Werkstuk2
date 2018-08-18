@@ -15,6 +15,7 @@
 		B4BF21F721280C570013E4CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4BF21F521280C570013E4CE /* LaunchScreen.storyboard */; };
 		B4BF220221280C570013E4CE /* David_Heremans_Multec_Werkstuk2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF220121280C570013E4CE /* David_Heremans_Multec_Werkstuk2Tests.swift */; };
 		B4BF220D21280C570013E4CE /* David_Heremans_Multec_Werkstuk2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF220C21280C570013E4CE /* David_Heremans_Multec_Werkstuk2UITests.swift */; };
+		B4BF221F212868440013E4CE /* DetailStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF221E212868440013E4CE /* DetailStationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B4BF220821280C570013E4CE /* David_Heremans_Multec_Werkstuk2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = David_Heremans_Multec_Werkstuk2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4BF220C21280C570013E4CE /* David_Heremans_Multec_Werkstuk2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = David_Heremans_Multec_Werkstuk2UITests.swift; sourceTree = "<group>"; };
 		B4BF220E21280C570013E4CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4BF221E212868440013E4CE /* DetailStationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		B4BF21E821280C530013E4CE /* David_Heremans_Multec_Werkstuk2 */ = {
 			isa = PBXGroup;
 			children = (
+				B4BF221E212868440013E4CE /* DetailStationViewController.swift */,
 				B4BF21E921280C530013E4CE /* AppDelegate.swift */,
 				B4BF21EB21280C530013E4CE /* ViewController.swift */,
 				B4BF21ED21280C530013E4CE /* Main.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4BF221F212868440013E4CE /* DetailStationViewController.swift in Sources */,
 				B4BF21F221280C530013E4CE /* David_Heremans_Multec_Werkstuk2.xcdatamodeld in Sources */,
 				B4BF21EC21280C530013E4CE /* ViewController.swift in Sources */,
 				B4BF21EA21280C530013E4CE /* AppDelegate.swift in Sources */,
