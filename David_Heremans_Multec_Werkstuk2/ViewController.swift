@@ -15,6 +15,7 @@ import CoreLocation
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var myMapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
@@ -47,18 +48,15 @@ func getData(){
             print("Error: did not receive data")
             return
         }
-       /* do {
-            guard let json = JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject]
-        }
+       /* let json = JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject]
         
-        for station in json! {
-            let naam = station["name"] as! String
-            let aantalBikeStands = station["bike_stands"] as! Int
-            let aantalBikeStandsAvailable = station["available_bike_stands"] as! Int
-            let aantalBikesAvailable = station["available_bikes"] as! Int
-        }*/
+        let title = json!["title"] as? String*/
     }
     task.resume()
+    
+    DispatchQueue.main.async {
+        
+    }
     
 }
 
