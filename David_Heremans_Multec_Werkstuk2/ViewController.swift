@@ -22,7 +22,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //refreshData()
         laatZienOpKaart()
         getData()
     }
@@ -34,31 +33,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-   /* func refreshData(){
-        let mangedContext = self.appDelegate?.persistentContainer.viewContext
-
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "VilloStation")
-        fetchRequest.includesPropertyValues = false
-        
-        do{
-            let items = try mangedContext?.fetch(fetchRequest) as! [NSManagedObject]
-            
-            for item in items {
-                mangedContext?.delete(item)
-            }
-           let allAnnotations = myMapView.annotations
-            myMapView.removeAnnotation(allAnnotations)
-            
-            try mangedContext?.save()
-                
-            
-        } catch{
-            
-        }
-        getData()
-
-    }*/
 
     func getData(){
     let mangedContext = self.appDelegate?.persistentContainer.viewContext
@@ -174,8 +148,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
              }
              
             }
-        
     
+   
+   
     }
     
 
