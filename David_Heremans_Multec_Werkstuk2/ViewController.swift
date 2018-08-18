@@ -25,6 +25,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         super.viewDidLoad()
         
         getData()
+        laatZienOpKaart()
         
     }
 
@@ -78,10 +79,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 let banking = station["banking"] as! Bool
                 let bonus = station["bonus"] as! Bool
                 
-                
-
-                
-                
+            
                 let dataStation = NSEntityDescription.insertNewObject(forEntityName: "VilloStation", into: mangedContext!) as! VilloStation
                 
                 dataStation.number = Int16(number)
@@ -107,11 +105,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         task.resume()
     }
         func laatZienOpKaart()  {
+            
             let mangedContext = self.appDelegate?.persistentContainer.viewContext
 
                 let stationFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "VilloStation")
                 
-                let opgehaaldeStations:[VilloStation]
+            var opgehaaldeStations:[VilloStation] = []
             
                 do{
                     opgehaaldeStations = try mangedContext?.fetch(stationFetch) as! [VilloStation]
@@ -122,14 +121,37 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                         let annotation = MKPointAnnotation()
                         annotation.title = station.name
                         annotation.coordinate = CLLocationCoordinate2D(latitude: station.lat, longitude: station.lng)
-                        myMapView.addAnnotation(annotation)
+                        self.myMapView.addAnnotation(annotation)
+                        self.myMapView.selectAnnotation(annotation, animated: true)
+
                     }
-                
                 } catch {
                     fatalError("failed to fetch: \(error)")
+                }
+            
+    
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let center = CLLocationCoordinate2D(latitude: 50.862747, longitude: 4.353424)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        
+        self.myMapView.setRegion(region, animated: true)
+    }
+    /*Eigen locatie, afkomstig van https://stackoverflow.com/questions/25449469/show-current-location-and-update-location-in-mkmapview-in-swift */
+            
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last{
+            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            self.myMapView.setRegion(region, animated: true)
+             }
+             
             }
         }
+    
+    }
+    
 
 
-}
+
 
