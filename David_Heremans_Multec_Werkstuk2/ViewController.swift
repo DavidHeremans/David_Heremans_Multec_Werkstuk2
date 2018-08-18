@@ -47,7 +47,7 @@ func getData(){
             print("Error: did not receive data")
             return
         }
-        do {
+       /* do {
             guard let json = JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject]
         }
         
@@ -56,7 +56,7 @@ func getData(){
             let aantalBikeStands = station["bike_stands"] as! Int
             let aantalBikeStandsAvailable = station["available_bike_stands"] as! Int
             let aantalBikesAvailable = station["available_bikes"] as! Int
-        }
+        }*/
     }
     task.resume()
     
