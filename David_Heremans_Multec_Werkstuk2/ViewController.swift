@@ -15,6 +15,8 @@ import CoreLocation
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     let appDelegate = UIApplication.shared.delegate as? AppDelegate
+    
+
    
 
     @IBOutlet weak var myMapView: MKMapView!
@@ -34,6 +36,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 
 
     func getData(){
+        let mangedContext = self.appDelegate?.persistentContainer.viewContext
+
     
     let url = URL(string: "https://api.jcdecaux.com/vls/v1/stations?apiKey=6d5071ed0d0b3b68462ad73df43fd9e5479b03d6&contract=Bruxelles-Capitale")
     let urlRequest = URLRequest(url: url!)
@@ -57,6 +61,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 print("failed serializaton")
                 return
             }
+
             
             for station in dataStation!{
                 let number = station["number"] as! Int
@@ -74,9 +79,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 let bonus = station["bonus"] as! Bool
                 
                 
-            
+
                 
-                let mangedContext = self.appDelegate?.persistentContainer.viewContext
                 
                 let dataStation = NSEntityDescription.insertNewObject(forEntityName: "VilloStation", into: mangedContext!) as! VilloStation
                 
@@ -92,23 +96,40 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 dataStation.contract_name = contract_name
                 dataStation.banking = banking
                 dataStation.bonus = bonus
-                
+                }
                 do {
                     try mangedContext?.save()
                 }catch{
                     fatalError("fail")
                 }
-                
             }
         }
+        task.resume()
     }
-    task.resume()
-    
-    /*DispatchQueue.main.async {
-        
-    }*/
-    
-}
+        func laatZienOpKaart()  {
+            let mangedContext = self.appDelegate?.persistentContainer.viewContext
+
+                let stationFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "VilloStation")
+                
+                let opgehaaldeStations:[VilloStation]
+            
+                do{
+                    opgehaaldeStations = try mangedContext?.fetch(stationFetch) as! [VilloStation]
+                    
+                    let stations = opgehaaldeStations
+                    
+                    for station in stations {
+                        let annotation = MKPointAnnotation()
+                        annotation.title = station.name
+                        annotation.coordinate = CLLocationCoordinate2D(latitude: station.lat, longitude: station.lng)
+                        myMapView.addAnnotation(annotation)
+                    }
+                
+                } catch {
+                    fatalError("failed to fetch: \(error)")
+            }
+        }
+
 
 }
 
