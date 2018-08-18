@@ -1,0 +1,600 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B4BF21EA21280C530013E4CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF21E921280C530013E4CE /* AppDelegate.swift */; };
+		B4BF21EC21280C530013E4CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF21EB21280C530013E4CE /* ViewController.swift */; };
+		B4BF21EF21280C530013E4CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4BF21ED21280C530013E4CE /* Main.storyboard */; };
+		B4BF21F221280C530013E4CE /* David_Heremans_Multec_Werkstuk2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4BF21F021280C530013E4CE /* David_Heremans_Multec_Werkstuk2.xcdatamodeld */; };
+		B4BF21F421280C570013E4CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4BF21F321280C570013E4CE /* Assets.xcassets */; };
+		B4BF21F721280C570013E4CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4BF21F521280C570013E4CE /* LaunchScreen.storyboard */; };
+		B4BF220221280C570013E4CE /* David_Heremans_Multec_Werkstuk2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF220121280C570013E4CE /* David_Heremans_Multec_Werkstuk2Tests.swift */; };
+		B4BF220D21280C570013E4CE /* David_Heremans_Multec_Werkstuk2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF220C21280C570013E4CE /* David_Heremans_Multec_Werkstuk2UITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B4BF21FE21280C570013E4CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4BF21DE21280C530013E4CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4BF21E521280C530013E4CE;
+			remoteInfo = David_Heremans_Multec_Werkstuk2;
+		};
+		B4BF220921280C570013E4CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4BF21DE21280C530013E4CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4BF21E521280C530013E4CE;
+			remoteInfo = David_Heremans_Multec_Werkstuk2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B4BF21E621280C530013E4CE /* David_Heremans_Multec_Werkstuk2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = David_Heremans_Multec_Werkstuk2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4BF21E921280C530013E4CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B4BF21EB21280C530013E4CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B4BF21EE21280C530013E4CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B4BF21F121280C530013E4CE /* David_Heremans_Multec_Werkstuk2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = David_Heremans_Multec_Werkstuk2.xcdatamodel; sourceTree = "<group>"; };
+		B4BF21F321280C570013E4CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B4BF21F621280C570013E4CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B4BF21F821280C570013E4CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4BF21FD21280C570013E4CE /* David_Heremans_Multec_Werkstuk2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = David_Heremans_Multec_Werkstuk2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4BF220121280C570013E4CE /* David_Heremans_Multec_Werkstuk2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = David_Heremans_Multec_Werkstuk2Tests.swift; sourceTree = "<group>"; };
+		B4BF220321280C570013E4CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4BF220821280C570013E4CE /* David_Heremans_Multec_Werkstuk2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = David_Heremans_Multec_Werkstuk2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4BF220C21280C570013E4CE /* David_Heremans_Multec_Werkstuk2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = David_Heremans_Multec_Werkstuk2UITests.swift; sourceTree = "<group>"; };
+		B4BF220E21280C570013E4CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B4BF21E321280C530013E4CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4BF21FA21280C570013E4CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4BF220521280C570013E4CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B4BF21DD21280C530013E4CE = {
+			isa = PBXGroup;
+			children = (
+				B4BF21E821280C530013E4CE /* David_Heremans_Multec_Werkstuk2 */,
+				B4BF220021280C570013E4CE /* David_Heremans_Multec_Werkstuk2Tests */,
+				B4BF220B21280C570013E4CE /* David_Heremans_Multec_Werkstuk2UITests */,
+				B4BF21E721280C530013E4CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B4BF21E721280C530013E4CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4BF21E621280C530013E4CE /* David_Heremans_Multec_Werkstuk2.app */,
+				B4BF21FD21280C570013E4CE /* David_Heremans_Multec_Werkstuk2Tests.xctest */,
+				B4BF220821280C570013E4CE /* David_Heremans_Multec_Werkstuk2UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B4BF21E821280C530013E4CE /* David_Heremans_Multec_Werkstuk2 */ = {
+			isa = PBXGroup;
+			children = (
+				B4BF21E921280C530013E4CE /* AppDelegate.swift */,
+				B4BF21EB21280C530013E4CE /* ViewController.swift */,
+				B4BF21ED21280C530013E4CE /* Main.storyboard */,
+				B4BF21F321280C570013E4CE /* Assets.xcassets */,
+				B4BF21F521280C570013E4CE /* LaunchScreen.storyboard */,
+				B4BF21F821280C570013E4CE /* Info.plist */,
+				B4BF21F021280C530013E4CE /* David_Heremans_Multec_Werkstuk2.xcdatamodeld */,
+			);
+			path = David_Heremans_Multec_Werkstuk2;
+			sourceTree = "<group>";
+		};
+		B4BF220021280C570013E4CE /* David_Heremans_Multec_Werkstuk2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B4BF220121280C570013E4CE /* David_Heremans_Multec_Werkstuk2Tests.swift */,
+				B4BF220321280C570013E4CE /* Info.plist */,
+			);
+			path = David_Heremans_Multec_Werkstuk2Tests;
+			sourceTree = "<group>";
+		};
+		B4BF220B21280C570013E4CE /* David_Heremans_Multec_Werkstuk2UITests */ = {
+			isa = PBXGroup;
+			children = (
+				B4BF220C21280C570013E4CE /* David_Heremans_Multec_Werkstuk2UITests.swift */,
+				B4BF220E21280C570013E4CE /* Info.plist */,
+			);
+			path = David_Heremans_Multec_Werkstuk2UITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B4BF21E521280C530013E4CE /* David_Heremans_Multec_Werkstuk2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4BF221121280C570013E4CE /* Build configuration list for PBXNativeTarget "David_Heremans_Multec_Werkstuk2" */;
+			buildPhases = (
+				B4BF21E221280C530013E4CE /* Sources */,
+				B4BF21E321280C530013E4CE /* Frameworks */,
+				B4BF21E421280C530013E4CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = David_Heremans_Multec_Werkstuk2;
+			productName = David_Heremans_Multec_Werkstuk2;
+			productReference = B4BF21E621280C530013E4CE /* David_Heremans_Multec_Werkstuk2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B4BF21FC21280C570013E4CE /* David_Heremans_Multec_Werkstuk2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4BF221421280C570013E4CE /* Build configuration list for PBXNativeTarget "David_Heremans_Multec_Werkstuk2Tests" */;
+			buildPhases = (
+				B4BF21F921280C570013E4CE /* Sources */,
+				B4BF21FA21280C570013E4CE /* Frameworks */,
+				B4BF21FB21280C570013E4CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B4BF21FF21280C570013E4CE /* PBXTargetDependency */,
+			);
+			name = David_Heremans_Multec_Werkstuk2Tests;
+			productName = David_Heremans_Multec_Werkstuk2Tests;
+			productReference = B4BF21FD21280C570013E4CE /* David_Heremans_Multec_Werkstuk2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B4BF220721280C570013E4CE /* David_Heremans_Multec_Werkstuk2UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4BF221721280C570013E4CE /* Build configuration list for PBXNativeTarget "David_Heremans_Multec_Werkstuk2UITests" */;
+			buildPhases = (
+				B4BF220421280C570013E4CE /* Sources */,
+				B4BF220521280C570013E4CE /* Frameworks */,
+				B4BF220621280C570013E4CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B4BF220A21280C570013E4CE /* PBXTargetDependency */,
+			);
+			name = David_Heremans_Multec_Werkstuk2UITests;
+			productName = David_Heremans_Multec_Werkstuk2UITests;
+			productReference = B4BF220821280C570013E4CE /* David_Heremans_Multec_Werkstuk2UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B4BF21DE21280C530013E4CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "David Heremans";
+				TargetAttributes = {
+					B4BF21E521280C530013E4CE = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					B4BF21FC21280C570013E4CE = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = B4BF21E521280C530013E4CE;
+					};
+					B4BF220721280C570013E4CE = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = B4BF21E521280C530013E4CE;
+					};
+				};
+			};
+			buildConfigurationList = B4BF21E121280C530013E4CE /* Build configuration list for PBXProject "David_Heremans_Multec_Werkstuk2" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B4BF21DD21280C530013E4CE;
+			productRefGroup = B4BF21E721280C530013E4CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B4BF21E521280C530013E4CE /* David_Heremans_Multec_Werkstuk2 */,
+				B4BF21FC21280C570013E4CE /* David_Heremans_Multec_Werkstuk2Tests */,
+				B4BF220721280C570013E4CE /* David_Heremans_Multec_Werkstuk2UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B4BF21E421280C530013E4CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4BF21F721280C570013E4CE /* LaunchScreen.storyboard in Resources */,
+				B4BF21F421280C570013E4CE /* Assets.xcassets in Resources */,
+				B4BF21EF21280C530013E4CE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4BF21FB21280C570013E4CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4BF220621280C570013E4CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B4BF21E221280C530013E4CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4BF21F221280C530013E4CE /* David_Heremans_Multec_Werkstuk2.xcdatamodeld in Sources */,
+				B4BF21EC21280C530013E4CE /* ViewController.swift in Sources */,
+				B4BF21EA21280C530013E4CE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4BF21F921280C570013E4CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4BF220221280C570013E4CE /* David_Heremans_Multec_Werkstuk2Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4BF220421280C570013E4CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4BF220D21280C570013E4CE /* David_Heremans_Multec_Werkstuk2UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B4BF21FF21280C570013E4CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4BF21E521280C530013E4CE /* David_Heremans_Multec_Werkstuk2 */;
+			targetProxy = B4BF21FE21280C570013E4CE /* PBXContainerItemProxy */;
+		};
+		B4BF220A21280C570013E4CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4BF21E521280C530013E4CE /* David_Heremans_Multec_Werkstuk2 */;
+			targetProxy = B4BF220921280C570013E4CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B4BF21ED21280C530013E4CE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4BF21EE21280C530013E4CE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B4BF21F521280C570013E4CE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4BF21F621280C570013E4CE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B4BF220F21280C570013E4CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B4BF221021280C570013E4CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B4BF221221280C570013E4CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = David_Heremans_Multec_Werkstuk2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "David-Heremans.David-Heremans-Multec-Werkstuk2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B4BF221321280C570013E4CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = David_Heremans_Multec_Werkstuk2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "David-Heremans.David-Heremans-Multec-Werkstuk2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B4BF221521280C570013E4CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = David_Heremans_Multec_Werkstuk2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "David-Heremans.David-Heremans-Multec-Werkstuk2Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/David_Heremans_Multec_Werkstuk2.app/David_Heremans_Multec_Werkstuk2";
+			};
+			name = Debug;
+		};
+		B4BF221621280C570013E4CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = David_Heremans_Multec_Werkstuk2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "David-Heremans.David-Heremans-Multec-Werkstuk2Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/David_Heremans_Multec_Werkstuk2.app/David_Heremans_Multec_Werkstuk2";
+			};
+			name = Release;
+		};
+		B4BF221821280C570013E4CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = David_Heremans_Multec_Werkstuk2UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "David-Heremans.David-Heremans-Multec-Werkstuk2UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = David_Heremans_Multec_Werkstuk2;
+			};
+			name = Debug;
+		};
+		B4BF221921280C570013E4CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = David_Heremans_Multec_Werkstuk2UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "David-Heremans.David-Heremans-Multec-Werkstuk2UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = David_Heremans_Multec_Werkstuk2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B4BF21E121280C530013E4CE /* Build configuration list for PBXProject "David_Heremans_Multec_Werkstuk2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4BF220F21280C570013E4CE /* Debug */,
+				B4BF221021280C570013E4CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4BF221121280C570013E4CE /* Build configuration list for PBXNativeTarget "David_Heremans_Multec_Werkstuk2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4BF221221280C570013E4CE /* Debug */,
+				B4BF221321280C570013E4CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4BF221421280C570013E4CE /* Build configuration list for PBXNativeTarget "David_Heremans_Multec_Werkstuk2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4BF221521280C570013E4CE /* Debug */,
+				B4BF221621280C570013E4CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4BF221721280C570013E4CE /* Build configuration list for PBXNativeTarget "David_Heremans_Multec_Werkstuk2UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4BF221821280C570013E4CE /* Debug */,
+				B4BF221921280C570013E4CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B4BF21F021280C530013E4CE /* David_Heremans_Multec_Werkstuk2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B4BF21F121280C530013E4CE /* David_Heremans_Multec_Werkstuk2.xcdatamodel */,
+			);
+			currentVersion = B4BF21F121280C530013E4CE /* David_Heremans_Multec_Werkstuk2.xcdatamodel */;
+			path = David_Heremans_Multec_Werkstuk2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B4BF21DE21280C530013E4CE /* Project object */;
+}
