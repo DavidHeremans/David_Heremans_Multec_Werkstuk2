@@ -149,7 +149,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
              
             }
     
-   
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        self.performSegue(withIdentifier: "DetailStationViewController", sender: self)
+    }
    
     }
     
