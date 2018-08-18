@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import MapKit
 
-class ViewController: UIViewController {
+import CoreData
+import CoreLocation
 
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+
+    @IBOutlet weak var myMapView: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
