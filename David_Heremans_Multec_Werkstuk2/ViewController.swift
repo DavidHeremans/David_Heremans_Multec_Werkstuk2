@@ -76,6 +76,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
 
     //Haalt de data uit de core data
+    //Code uit de slides en de werkcolleges
     
     func getData(){
     let mangedContext = self.appDelegate?.persistentContainer.viewContext
@@ -147,6 +148,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     // Zorgt dat de annotations zichtbaar zijn op de map
+    // Code uit de slides en de werkcolleges
     
     func laatZienOpKaart()  {
             
