@@ -42,9 +42,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         } else {
             print("turn on location")
         }
-        maakCoreDataLeeg()
-        laatZienOpKaart()
         getData()
+        laatZienOpKaart()
+
+
+        maakCoreDataLeeg()
     }
     
     /*Deze functie is afkomstig van https://stackoverflow.com/questions/5621173/xcode-mac-keyboard-shortcut-to-type-the-or-sign-double-vertical-bar */
@@ -62,6 +64,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         } catch {
             print("ER is iets fout gegaan")
         }
+
     }
    
     
@@ -72,6 +75,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         // Dispose of any resources that can be recreated.
     }
 
+    //Haalt de data uit de core data
+    
     func getData(){
     let mangedContext = self.appDelegate?.persistentContainer.viewContext
 
@@ -141,6 +146,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         task.resume()
     }
     
+    // Zorgt dat de annotations zichtbaar zijn op de map
+    
     func laatZienOpKaart()  {
             
             let mangedContext = self.appDelegate?.persistentContainer.viewContext
@@ -189,6 +196,44 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("unable to find user location")
+    }
+    //Om naar volgende detailStation view te gaan
+    //Code afkomstig van https://stackoverflow.com/questions/33053832/swift-perform-segue-from-map-annotation
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        let  reuseId = "pin"
+        
+        var pinView = myMapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
+        if pinView == nil {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView?.canShowCallout = true
+            
+            let rightButton: AnyObject! = UIButton.init(type: UIButtonType.detailDisclosure)
+            rightButton.title(for: UIControlState.normal)
+            
+            pinView?.rightCalloutAccessoryView = rightButton as? UIView
+        }
+        else {
+            pinView?.annotation = annotation
+        }
+        return pinView
+        
+    }
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.rightCalloutAccessoryView {
+        performSegue(withIdentifier: "DetailStationViewController", sender: view)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailStationViewController" {
+            let nextVc = segue.destination as! DetailStationViewController
+            
+            nextVc.Name = (sender as! MKAnnotationView).annotation!.title as! String
+        }
     }
    
    
