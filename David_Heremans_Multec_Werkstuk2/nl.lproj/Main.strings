@@ -1,0 +1,24 @@
+
+/* Class = "UIViewController"; title = "mapViewController"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "mapViewController";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Lfv-oJ-UJC"; */
+"Lfv-oJ-UJC.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "TLA-1Y-fF0"; */
+"TLA-1Y-fF0.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dhb-BD-U4g"; */
+"dhb-BD-U4g.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fuP-EE-ZHM"; */
+"fuP-EE-ZHM.text" = "Label";
+
+/* Class = "UIViewController"; title = "DetailStationViewController"; ObjectID = "kYK-Vh-sQN"; */
+"kYK-Vh-sQN.title" = "DetailStationViewController";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "tsb-OH-fGl"; */
+"tsb-OH-fGl.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "v70-xa-hx6"; */
+"v70-xa-hx6.text" = "Label";

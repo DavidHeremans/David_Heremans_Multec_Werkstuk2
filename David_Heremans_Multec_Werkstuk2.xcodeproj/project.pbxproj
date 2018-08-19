@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B44AACB32129930100E13031 /* Localizalble.strings in Resources */ = {isa = PBXBuildFile; fileRef = B44AACB52129930100E13031 /* Localizalble.strings */; };
 		B4BF21EA21280C530013E4CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF21E921280C530013E4CE /* AppDelegate.swift */; };
 		B4BF21EC21280C530013E4CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF21EB21280C530013E4CE /* ViewController.swift */; };
 		B4BF21EF21280C530013E4CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4BF21ED21280C530013E4CE /* Main.storyboard */; };
@@ -36,6 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B44AACAD212991EC00E13031 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
+		B44AACAE212991EC00E13031 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B44AACB02129922F00E13031 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		B44AACB42129930100E13031 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizalble.strings; sourceTree = "<group>"; };
+		B44AACB62129930400E13031 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizalble.strings; sourceTree = "<group>"; };
 		B4BF21E621280C530013E4CE /* David_Heremans_Multec_Werkstuk2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = David_Heremans_Multec_Werkstuk2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4BF21E921280C530013E4CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4BF21EB21280C530013E4CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +87,7 @@
 		B4BF21DD21280C530013E4CE = {
 			isa = PBXGroup;
 			children = (
+				B44AACB52129930100E13031 /* Localizalble.strings */,
 				B4BF21E821280C530013E4CE /* David_Heremans_Multec_Werkstuk2 */,
 				B4BF220021280C570013E4CE /* David_Heremans_Multec_Werkstuk2Tests */,
 				B4BF220B21280C570013E4CE /* David_Heremans_Multec_Werkstuk2UITests */,
@@ -217,6 +224,7 @@
 			knownRegions = (
 				en,
 				Base,
+				nl,
 			);
 			mainGroup = B4BF21DD21280C530013E4CE;
 			productRefGroup = B4BF21E721280C530013E4CE /* Products */;
@@ -237,6 +245,7 @@
 			files = (
 				B4BF21F721280C570013E4CE /* LaunchScreen.storyboard in Resources */,
 				B4BF21F421280C570013E4CE /* Assets.xcassets in Resources */,
+				B44AACB32129930100E13031 /* Localizalble.strings in Resources */,
 				B4BF21EF21280C530013E4CE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,10 +310,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		B44AACB52129930100E13031 /* Localizalble.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B44AACB42129930100E13031 /* en */,
+				B44AACB62129930400E13031 /* nl */,
+			);
+			name = Localizalble.strings;
+			sourceTree = "<group>";
+		};
 		B4BF21ED21280C530013E4CE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B4BF21EE21280C530013E4CE /* Base */,
+				B44AACAD212991EC00E13031 /* nl */,
+				B44AACB02129922F00E13031 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -313,6 +333,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B4BF21F621280C570013E4CE /* Base */,
+				B44AACAE212991EC00E13031 /* nl */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
