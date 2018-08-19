@@ -12,20 +12,58 @@ import MapKit
 import CoreData
 import CoreLocation
 
+//User location code afkomstig van https://www.youtube.com/watch?v=sVMbFgUdDg0
+
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     let appDelegate = UIApplication.shared.delegate as? AppDelegate
     
+
+    var locationManager = CLLocationManager()
 
     @IBOutlet weak var myMapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // show user location
+        myMapView.showsUserLocation = true
+        
+        if CLLocationManager.locationServicesEnabled() == true {
+            if CLLocationManager.authorizationStatus() == .restricted ||
+            CLLocationManager.authorizationStatus() == .denied ||
+                CLLocationManager.authorizationStatus() == .notDetermined {
+                
+                locationManager.requestWhenInUseAuthorization()
+            }
+            locationManager.desiredAccuracy = 1.0
+            locationManager.delegate = self
+            locationManager.startUpdatingLocation()
+        } else {
+            print("turn on location")
+        }
+        maakCoreDataLeeg()
         laatZienOpKaart()
         getData()
     }
     
+    /*Deze functie is afkomstig van https://stackoverflow.com/questions/5621173/xcode-mac-keyboard-shortcut-to-type-the-or-sign-double-vertical-bar */
+    
+    func maakCoreDataLeeg() {
+        
+        let mangedContext = self.appDelegate?.persistentContainer.viewContext
+
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "VilloStation")
+        let request = NSBatchDeleteRequest(fetchRequest: fetch)
+        
+        do{
+            try mangedContext?.execute(request)
+            try mangedContext?.save()
+        } catch {
+            print("ER is iets fout gegaan")
+        }
+    }
+   
     
     
 
@@ -106,9 +144,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func laatZienOpKaart()  {
             
             let mangedContext = self.appDelegate?.persistentContainer.viewContext
+        let stationFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "VilloStation")
 
-                let stationFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "VilloStation")
-                
+        
             var opgehaaldeStations:[VilloStation] = []
             
                 do{
@@ -122,6 +160,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                         annotation.coordinate = CLLocationCoordinate2D(latitude: station.lat, longitude: station.lng)
                         self.myMapView.addAnnotation(annotation)
                         self.myMapView.selectAnnotation(annotation, animated: true)
+                        
+                        func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+                            self.performSegue(withIdentifier: "DetailStationViewController", sender: self)
+                        }
 
                     }
                 } catch {
@@ -138,20 +180,17 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
             
     }
-    /*Eigen locatie, afkomstig van https://stackoverflow.com/questions/25449469/show-current-location-and-update-location-in-mkmapview-in-swift */
+    
+    // Show user location
             
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last{
-            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-            self.myMapView.setRegion(region, animated: true)
-             }
-             
+        let region = MKCoordinateRegionMake(CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude), MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+        self.myMapView.setRegion(region, animated: true)
             }
-    
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        self.performSegue(withIdentifier: "DetailStationViewController", sender: self)
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("unable to find user location")
     }
+   
    
     }
     
